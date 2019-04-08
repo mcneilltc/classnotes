@@ -20,7 +20,7 @@ class Particle {
 }
 const particles =[];
      for (let i = 0; i<100; i++){
-          particles.push(new Particle(i, Math.random()*500).toFixed(3));
+          particles.push(new Particle(i, Math.random()*500));
 
          }
 console.log(particles);
