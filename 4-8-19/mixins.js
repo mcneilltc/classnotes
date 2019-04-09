@@ -51,17 +51,45 @@ log the new profile*/
     avatar: ('avatar1')
 };
 //console.log(profile);
- function getProfileUpdate(){ 
-    return { 
-    address:(' moved'),
-    city:(' to a city'),
-    state: ('in a state'),
-    zipcode: ('that does not have a zipcode'),
-    avatar: ('avatar2')
-}};
+ //function getProfileUpdate(){ 
+    //return { 
+   // address:(' moved'),
+    //city:(' to a city'),
+    //state: ('in a state'),
+    //zipcode: ('that does not have a zipcode'),
+    //avatar: ('avatar2')
+//}};
+function getProfileUpdate(){
+    this.name = Tiquila;
+    this.address = moved;
+    this.city = 'to a city';
+    this.state= 'in a state';
+    this.zipcode= 'that does not have a zipcode';
+    this.avatar= 'avatar2';
+
+}
+profile.protoype = {
+    getProfileUpdate(){
+        return {
+            address:('') ,
+            city: (''),
+            state: (''),
+            zipcode:('') ,
+        }
+    }
+}
+profile.prototype ={
+    updateProfile() {
+return{
+    name: ('I')
+}
+    }
+
+};
 console.log(getProfileUpdate);
 
 const updateProfile =Object.assign({}, profile, getProfileUpdate, {
     name: ('I')
 });
+console.log(profile);
 //  console.log(updateProfile);
