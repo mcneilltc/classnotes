@@ -1,14 +1,5 @@
-var littleOne = [];
+var littleOne = [0];
 var howTheyMarch = ["one by one", "two by two", "three by three", "four by four", "five by five", "six by six", "seven by seven", "eight by eight", "nine by nine", "ten by ten"];
-
-function theAntsGoMarching(){
-	for (var i = 0; i < howTheyMarch.length; i++){
-		howManyByHowMany;
-		console.log(littleOne[i]);
-		console.log("And they all go marching down to the ground to get out of the rain, BOOM! BOOM! BOOM!");
-	}
-}
-theAntsGoMarching();
 
 littleOne[0] = "The little one stops to suck her thumb";
 littleOne[1] = "The little one stops to tie his shoe";
@@ -21,10 +12,19 @@ littleOne[7] = "The little one stops to roll a skate";
 littleOne[8] = "The little one stops to check the time";
 littleOne[9] = "The little one stops to shut The End";
 
+function theAntsGoMarching(){
+	for (var i = 0; i < howTheyMarch.length; i++){
+		howManyByHowMany(i);
+		console.log(littleOne[i]);
+		console.log("And they all go marching down to the ground to get out of the rain, BOOM! BOOM! BOOM!");
+	}
+}
+
 function howManyByHowMany(number){
-	var numbers = howTheyMarch;
+	var numbers = howTheyMarch[number];
 	var hurrah = " hurrah, hurrah \n";
 	var march = "The ants go marching " + numbers;
-  debugger
+ // debugger
 	console.log(march + hurrah + march + hurrah + march);
 }
+theAntsGoMarching();
