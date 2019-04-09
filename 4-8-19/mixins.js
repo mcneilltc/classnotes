@@ -80,12 +80,12 @@ function getProfileUpdate() {
     //}
 //};
 
-function updateProfile(newValues) {
+function updateProfile() {
     // The Object.assign() method is used to copy the values of all enumerable
     // own properties from one or more source objects to a target object. It
     // will return the target object.
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-    Object.assign(profile, newValues);
+    Object.assign(profile, getProfileUpdate());
 }
 
 // Create a user profile object
@@ -93,12 +93,11 @@ console.log('original profile: ');
 console.log(profile);
 
 // Get a profile update
-var profileUpdate = getProfileUpdate();
 console.log('the profile update values: ');
-console.log(profileUpdate);
+console.log(getProfileUpdate());
 
 // Update the profile with the new values
-updateProfile(profileUpdate);
+updateProfile();
 
 console.log('new profile: ');
 console.log(profile);
