@@ -42,7 +42,7 @@ Write a function updateProfile() that takes a single object of keys:values and o
 Get a profile update and update the profile with it.
 log the new profile*/
 
-const profile={
+ const profile={
     name: ('Tiquila'),
     address:('123 Lane'),
     city: ('Charlotte'),
@@ -51,16 +51,16 @@ const profile={
     avatar: ('avatar1')
 };
 //console.log(profile);
-const getProfileUpdate = Object.assign({}, profile, {
+ getProfileUpdate(){ return { 
     address:(' moved'),
     city:(' to a city'),
     state: ('in a state'),
     zipcode: ('that does not have a zipcode'),
     avatar: ('avatar2')
-});
-//console.log(getProfileUpdate);
+}};
+console.log(getProfileUpdate);
 
 const updateProfile =Object.assign({}, profile, getProfileUpdate, {
     name: ('I')
 });
-console.log(updateProfile);
+//  console.log(updateProfile);
