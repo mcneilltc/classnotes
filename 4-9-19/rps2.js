@@ -9,13 +9,16 @@ function greetOnLoad () {
 greetOnLoad();
 
 function player(){
-    var button = document.getElementById("player1", "player2", "player3", "player4");
-    this.player1 = name ("p1"),
-    this.player2 = name ("p2"),
-    this.player3 = name ("p3"),
-    this.player4 = name ("p4"),
-    button.innerHTML = name;
-};
+   // var button = document.getElementById("player1", "player2", "player3", "player4");
+    var x = document.getElementById("player1").value;
+    document.getElementById("button").innerHTML =x;}
+
+    //this.player1 = name ("p1"),
+    //this.player2 = name ("p2"),
+    //this.player3 = name ("p3"),
+   // this.player4 = name ("p4"),
+    //button.innerHTML = name;
+
 
         const hands = ['rock', 'paper', 'scissors'];
         function getHand(){
