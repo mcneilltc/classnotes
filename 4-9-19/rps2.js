@@ -1,26 +1,35 @@
 
 
-function greetOnLoad () {
-    var name = prompt("Hi! What's your name?");
-    var myelement = document.getElementById("greeting");
-    greeting.innerHTML= "Hello " + name + ". Lets play Rock, Paper, Scissors!";
+//function greetOnLoad () {//
+   // var name = prompt("Hi! What's your name?");
+   // var myelement = document.getElementById("greeting");
+   // greeting.innerHTML= "Hello " + name + ". Lets play Rock, Paper, Scissors!";
 }
-greetOnLoad();
+//greetOnLoad();
 
 
-function player(){
-   // var button = document.getElementById("player1", "player2", "player3", "player4");
-    var x = document.getElementById("player1").value;
-    document.getElementById("button").innerHTML =x;}
-
-    //this.player1 = name ("p1"),
-    //this.player2 = name ("p2"),
-    //this.player3 = name ("p3"),
-   // this.player4 = name ("p4"),
-    //button.innerHTML = name;
-
-
-        const hands = ['rock', 'paper', 'scissors'];
+  //      const hands = ['rock', 'paper', 'scissors'];
+  //      var cpuScore = 0;
+  //      var playerScore = 0;
+  //      
+    function rock(){
+  //      cpu = hands[parseInt(Math.random()*10)%3];
+  //     if (cpu === 'rock') 
+  // //         {text ="This is a tie."   
+   //         {return null;
+       }}
+  //         else{
+   //            if(cpu === 'scissors')
+   //            {text ='You lose this round.';
+    //           cpuScore++
+    //   }else {text = 'you win this round';
+    //            playerScore++
+    //        }  
+    //       }
+    //    document.getElementById().innerHTML = text;
+    //    }    
+        
+        
         function getHand(){
              return hands[parseInt(Math.random()*10)%3];
         }
