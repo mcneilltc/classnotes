@@ -51,7 +51,8 @@ log the new profile*/
     avatar: ('avatar1')
 };
 //console.log(profile);
- getProfileUpdate(){ return { 
+ function getProfileUpdate(){ 
+    return { 
     address:(' moved'),
     city:(' to a city'),
     state: ('in a state'),
