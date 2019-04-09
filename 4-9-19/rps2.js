@@ -24,7 +24,7 @@ function player(){
         function getHand(){
              return hands[parseInt(Math.random()*10)%3];
         }
-        
+       const player = prompt(" What's your player name?") 
        /* var players = {name: {player1: 'p',
                                      getHand(), score}
                             {player2: 'p2', 
