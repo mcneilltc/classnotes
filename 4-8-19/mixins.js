@@ -42,7 +42,7 @@ Write a function updateProfile() that takes a single object of keys:values and o
 Get a profile update and update the profile with it.
 log the new profile*/
 
- const profile={
+ const profile = {
     name: ('Tiquila'),
     address:('123 Lane'),
     city: ('Charlotte'),
@@ -59,37 +59,63 @@ log the new profile*/
     //zipcode: ('that does not have a zipcode'),
     //avatar: ('avatar2')
 //}};
-function getProfileUpdate(){
-    this.name = Tiquila;
-    this.address = moved;
-    this.city = 'to a city';
-    this.state= 'in a state';
-    this.zipcode= 'that does not have a zipcode';
-    this.avatar= 'avatar2';
 
+function getProfileUpdate() {
+    return {
+        address:('moved'),
+        city: ('to a city'),
+        state: ('in a state'),
+        zipcode:('that does not have a zip code')
+    };
 }
-profile.protoype = {
-    getProfileUpdate(){
-        return {
-            address:('') ,
-            city: (''),
-            state: (''),
-            zipcode:('') ,
-        }
-    }
-}
-profile.prototype ={
-    updateProfile() {
-return{
-    name: ('I')
-}
-    }
 
-};
-console.log(getProfileUpdate);
+//profile.protoype = {//
+    //getProfileUpdate() {
+        //return {
+        //    address:(''),
+        //    city: (''),
+        //   state: (''),
+        //    zipcode:(''),
+        //};
+    //}
+//};
 
-const updateProfile =Object.assign({}, profile, getProfileUpdate, {
-    name: ('I')
-});
+function updateProfile(newValues) {
+    // The Object.assign() method is used to copy the values of all enumerable
+    // own properties from one or more source objects to a target object. It
+    // will return the target object.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+    Object.assign(profile, newValues);
+}
+
+// Create a user profile object
+console.log('original profile: ');
 console.log(profile);
+
+// Get a profile update
+var profileUpdate = getProfileUpdate();
+console.log('the profile update values: ');
+console.log(profileUpdate);
+
+// Update the profile with the new values
+updateProfile(profileUpdate);
+
+console.log('new profile: ');
+console.log(profile);
+
+
+// profile.prototype ={
+//     updateProfile() {
+// return {
+//     this.name: ('I')
+// }
+//     }
+
+// };
+
+
+//const updateProfile =Object.assign({}, profile, getProfileUpdate, {
+ //   name: ('I')
+//});
+//console.log(profile);
 //  console.log(updateProfile);
