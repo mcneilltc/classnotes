@@ -5,8 +5,8 @@ function greetOnLoad () {
     var myelement = document.getElementById("greeting");
     greeting.innerHTML= "Hello " + name + ". Lets play Rock, Paper, Scissors!";
 }
-
 greetOnLoad();
+
 
 function player(){
    // var button = document.getElementById("player1", "player2", "player3", "player4");
@@ -24,7 +24,7 @@ function player(){
         function getHand(){
              return hands[parseInt(Math.random()*10)%3];
         }
-       const player = prompt(" What's your player name?") 
+      // const player = prompt(" What's your player name?") 
        /* var players = {name: {player1: 'p',
                                      getHand(), score}
                             {player2: 'p2', 
