@@ -92,7 +92,7 @@ function Particle(startX, startY) {
 Particle.prototype = {
   getVelocity: function() {
     return time * gravity;
-  },
+  }, unde
 
   move: function() {
     this.y += this.getVelocity();
