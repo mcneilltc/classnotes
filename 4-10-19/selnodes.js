@@ -1,4 +1,4 @@
-const head= document.getElementsByTagName('header');
+const head= document.querySelector('header');
 // const header = document.firstItem.parentElement;
 console.log(head);//header with all items
 

@@ -11,15 +11,13 @@ var newLi = document.createElement('li');
 newLi.innerHTML = "Cheese Whiz"
 list.appendChild(newLi);
 
+list.children[3].remove();
 
-//var newLI3 = document.createElement('li');
-//newLI3. innerHTML = "protein powder" ;
-//list.appendChild(newLI);
-//list.appendChild(newLI2);
-//list.appendChild(newLI3);
- 
-//console.log(newLI);
-//console.log(newLI2);
+var list2 =['protein powder', 'muscle milk', 'power bars']
+for (var i= 0; i<list.length; i++){
+var list2 = list.children[i];
+} 
+
 
 
 
