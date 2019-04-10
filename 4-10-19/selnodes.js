@@ -14,7 +14,7 @@ console.log(afterCur)// section after current with section 2
 const h2 = curr.previousElementSibling.children;
 console.log(h2);// should log the first section with the h2
 
-const highlight = section.children.querySelector('highlight');
+const highlight = section.children.getElementsByClassName('highlight');
 console.log(highlight)//get the section with h2 with highlight
 
 const allH2 = section.children.querySelector('h2');
