@@ -1,18 +1,18 @@
-const head= document.querySelector('header');
+const head= document.getElementsByTagName('header');
 // const header = document.firstItem.parentElement;
 console.log(head);//header with all items
 
-const section = head.nextElementSibling.querySelector('col');
-console.log(section);//sections in div with all the headers
+const section = document.head.nextElementSibling.children;
+console.log(section);// all the sections in div with all the 
 
-const curr = section.querySelector('current');
+const curr = document.section.getElementsByClassName('current');
 console.log(curr);// section labeled current section 2 highlighted
 
 const afterCur = curr.nextElementSibling;
 console.log(afterCur)// section after current with section 2
 
 const h2 = curr.previousElementSibling.children;
-console.log(h2);// should log section 1
+console.log(h2);// should log the first section with the h2
 
 const highlight = section.children.querySelector('highlight');
 console.log(highlight)//get the section with h2 with highlight
