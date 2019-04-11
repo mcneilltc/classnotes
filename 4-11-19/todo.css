@@ -1,4 +1,21 @@
 .strike-through{
     text-decoration: line-through;
+    color: red;
   }
-  
+
+  /*font-family: 'East Sea Dokdo', cursive;*/
+
+  /* h1*/
+  h1{
+      color: yellow;
+  }
+  body{
+    background-image: "mike-tinnion-327565-unsplash.jpg";
+    background-size: 2000px;
+    
+   
+    
+  }
+  div.ol.li{
+   
+  }

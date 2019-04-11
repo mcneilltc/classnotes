@@ -38,10 +38,10 @@
                   }
       
                 });
-                $("#list > ol").append($listItem);
+                $("#todolist > ol").append($listItem);
               });
       
               $("#clear").click(function(){
-                $("#list > ol").empty();
+                $("#todolist > ol").empty();
               });
       });
