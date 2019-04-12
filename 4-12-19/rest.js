@@ -97,11 +97,16 @@ $('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts'
         return '<li>' +post.body + '</li>'
     
     }))  
-$('post.body').click(function(){$.get('http://jsonplaceholder.typicode.com/comments?postId=', function(comments){
+$('#posts').click(function(){$.get('http://jsonplaceholder.typicode.com/comments?postId=1', function(comments){
 $('#posts').html(comments.map(function(post){
-    return '<li>' +post.comment + '</li>'}))
-})
-    
+    return '<li>' +post.body + '</li>'}.hover(){
+        
+    }))
+
+$('#posts').click(function(){
+    $('#posts').html('http://jsonplaceholder.typicode.com/posts');
+})  
+})    
 })
 })
 });	 
