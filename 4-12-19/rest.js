@@ -1,8 +1,8 @@
 //get all posts
 
-$('#getallposts').click(function(){
-    $.get('http://jsonplaceholder.typicode.com/posts',function(posts){
-	//Iterate over the response, adding elements to DOM
+$('#getallposts').click(function(){$.get('http://jsonplaceholder.typicode.com/posts', function(posts){
+    //Iterate over the response, adding elements to DOM
+    $('output').html(posts);
 	console.log(posts);
 	});//the button will get all the post
 });
@@ -92,14 +92,10 @@ fetch('https://jsonplaceholder.typicode.com/posts/12', {
   alert('Successfully deleted')})
 
   //display a list of posts, when the user clicks on the post, display all the comments from the post and then display a link back to all posts
-const posts = $('ol#posts');
-$('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts', function(posts){
-    console.log(posts)    
-posts.forEach(function(post){
-    const li = $ ('<li></li>');
-    //li.text(post);
-    //posts.append(li);
+
+//$('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts', function(posts){
+  //  console.log(posts)    
+
     
-})
-});	 
-})
+//})
+//});	 
