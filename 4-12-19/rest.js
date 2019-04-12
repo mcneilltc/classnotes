@@ -97,8 +97,8 @@ $('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts'
     console.log(posts)    
 posts.forEach(function(post){
     const li = $ ('<li></li>');
-    li.text(post);
-    posts.append(li);
+    //li.text(post);
+    //posts.append(li);
     
 })
 });	 
