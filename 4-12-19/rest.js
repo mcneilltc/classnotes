@@ -1,10 +1,10 @@
 
 
 //Make a GET request for the items to render
-$.get('http://jsonplaceholder.typicode.com/posts',function(posts){
+/*$.get('http://jsonplaceholder.typicode.com/posts',function(posts){
 	//Iterate over the response, adding elements to DOM
 	console.log(posts);
-	});//get the post
+	});//get the post*/
 
 $('#getallposts').click(function(){
     $.get('http://jsonplaceholder.typicode.com/posts',function(posts){
@@ -21,33 +21,55 @@ $('#com12').click(function(){$.get('http://jsonplaceholder.typicode.com/comments
     console.log(comId12);// comments with the post id of 12
 });
 });
+//userid
 $('#userid2').click(function(){$.get('http://jsonplaceholder.typicode.com/users?userId=2', function(userId2){
     console.log(userId2);// users with the user id of 2
 });
 });
+//create new post
 $('#newpost').click(function(){$.post('http://jsonplaceholder.typicode.com/posts/', function(newPost){
     console.log(newPost);// create a new post with new id and it is supplied with an id
 });
 });
-$('#replacepost').click(function(){$.put('http://jsonplaceholder.typicode.com/posts/12', function(replace){
-    console.log(replace);// replace an id
-})
-
-});
-
-fetch('https://jsonplaceholder.typicode.com/posts/101',{
+//replace post
+$('#replacepost').click(function(){
+fetch('https://jsonplaceholder.typicode.com/posts/12',{
     method: 'PUT',
     body:JSON.stringify({
-    id:101,    //the id of the new post that was created
-    }), 
+        title: "something",
+        body: "something else",    
+    }),
+    headers: {
+        "Content-Type": "application/json"
+    }
 })
   .then(response => response.json())
   .then(json => console.log(json))
-  fetch('https://jsonplaceholder.typicode.com/posts/101', {
+
+  fetch('https://jsonplaceholder.typicode.com/posts/12', {
       method: 'PATCH',
       body: JSON.stringify({
-          id:12,// the new post id
-      })
+        title: "new titles",
+      }),
+      headers: {
+          "Content-Type": "application/json"
+      }
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+})
+//update post
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'PUT',
+    body: JSON.stringify({
+      id: 1,
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
   })
   .then(response => response.json())
   .then(json => console.log(json))
