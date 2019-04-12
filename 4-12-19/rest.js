@@ -32,6 +32,22 @@ $('#newpost').click(function(){$.post('http://jsonplaceholder.typicode.com/posts
 $('#replacepost').click(function(){$.put('http://jsonplaceholder.typicode.com/posts/12', function(replace){
     console.log(replace);// replace an id
 })
-.then(response => response.json())
-.then(json=> console.log(json))
+
 });
+
+fetch('https://jsonplaceholder.typicode.com/posts/101',{
+    method: 'PUT',
+    body:JSON.stringify({
+    id:101,    //the id of the new post that was created
+    }), 
+})
+  .then(response => response.json())
+  .then(json => console.log(json))
+  fetch('https://jsonplaceholder.typicode.com/posts/101', {
+      method: 'PATCH',
+      body: JSON.stringify({
+          id:12,// the new post id
+      })
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
