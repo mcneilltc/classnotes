@@ -93,9 +93,8 @@ fetch('https://jsonplaceholder.typicode.com/posts/12', {
 
   //display a list of posts, when the user clicks on the post, display all the comments from the post and then display a link back to all posts
 
-$('display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts',function(posts){
-	
-	console.log(posts).innerHTML;
-	});
-
+$('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts', function(posts){
+    console.log(posts)
+//$('posts').text.innerHTML = posts;
+})	 
 })
