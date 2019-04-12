@@ -25,7 +25,13 @@ $('#userid2').click(function(){$.get('http://jsonplaceholder.typicode.com/users?
     console.log(userId2);// users with the user id of 2
 });
 });
-$('#newpost').click(function(){$.get('http://jsonplaceholder.typicode.com/users?userId=2', function(newPost){
-    console.log(newPost);// create a new post with new id
+$('#newpost').click(function(){$.post('http://jsonplaceholder.typicode.com/posts/', function(newPost){
+    console.log(newPost);// create a new post with new id and it is supplied with an id
 });
+});
+$('#replacepost').click(function(){$.put('http://jsonplaceholder.typicode.com/posts/12', function(replace){
+    console.log(replace);// replace an id
+})
+.then(response => response.json())
+.then(json=> console.log(json))
 });
