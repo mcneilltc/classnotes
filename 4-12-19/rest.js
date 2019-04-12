@@ -92,9 +92,14 @@ fetch('https://jsonplaceholder.typicode.com/posts/12', {
   alert('Successfully deleted')})
 
   //display a list of posts, when the user clicks on the post, display all the comments from the post and then display a link back to all posts
-
+const posts = $('ol#posts');
 $('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts', function(posts){
-    console.log(posts)
-//$('posts').text.innerHTML = posts;
-})	 
+    console.log(posts)    
+posts.forEach(function(post){
+    const li = $ ('<li></li>');
+    li.text(post);
+    posts.append(li);
+    
+})
+});	 
 })
