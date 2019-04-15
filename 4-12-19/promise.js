@@ -40,6 +40,28 @@ $('#submit').click(function() {
     var user = document.getElementById('inlineFormInputGroupUsername2').value;
     var exists = false;
 
+    let userName = document.querySelector('input#inlineFormInputGroupUsername2')
+ let submit = document.querySelector('button [type="submit"]')
+ submit.addEventListener("click", event => {
+    //executor
+ })
+function findUser(userName) {
+   return new Promise(function(resolve, reject){
+      $.get('http://jsonplaceholder.typicode.com/users?username=' + userName, function(user){
+         if(user.length) resolve(user[0])
+   else reject('error message');
+      }) //if the user option exists
+   })
+}
+
+function getUserPost(user){
+   return new Promise(function(resolve, reject){
+$.get('http://jsonplaceholder.typicode.com/post?userid=' + user.Id, function(posts){
+   resolve(posts)
+})
+   })
+}
+
     // 2. Get the list of users from jsonplaceholder.typicode.com/users
     // https://api.jquery.com/jQuery.get/
     // 3. See if the entered username exists in the list of users from jsonplaceholder.typicode.com
