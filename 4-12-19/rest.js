@@ -52,7 +52,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/12',{
   .then(response => response.json())
   .then(json => console.log(json))
 })
-//update the title of the posr with id of 12 and render responseJSON
+//update the title of the post with id of 12 and render responseJSON
 $('#updatepost').click(function(){
 fetch('https://jsonplaceholder.typicode.com/posts/12', {
     method: 'PUT',
