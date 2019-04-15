@@ -99,9 +99,7 @@ $('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts'
     }))  
 $('#posts').click(function(){$.get('http://jsonplaceholder.typicode.com/comments?postId=1', function(comments){
 $('#posts').html(comments.map(function(post){
-    return '<li>' +post.body + '</li>'}.hover(){
-        
-    }))
+    return '<li>' +post.body + '</li>'}))
 
 $('#posts').click(function(){
     $('#posts').html('http://jsonplaceholder.typicode.com/posts');
