@@ -27,27 +27,46 @@ p.then(function(data){
 //On Submit, look up the username entered by the user.
 //If no user is found, display a detailed error message.
 
-$('#submit').click(function(){$.get('http://jsonplaceholder.typicode.com/users', function(user){
+//$('#submit').click(function(){$.get('http://jsonplaceholder.typicode.com/users', function(user){
     //Iterate over the response, adding elements to DOM
-	console.log(user);
-	});//the button will get username
-});
+	//console.log(user);
+	//});//the button will get username
+//});
 
 $('#submit').click(function() {
 
     // 1. Get the value from the form the user entered as the username
-    var user = ''; // value from the form
+    // Note: all usernames retreived from the site are in lowercase letters
+    var user = document.getElementById('inlineFormInputGroupUsername2').value;
+    var exists = false;
 
     // 2. Get the list of users from jsonplaceholder.typicode.com/users
-    $.get('http://jsonplaceholder.typicode.com/users', function(user) {
-      //Iterate over the response, adding elements to DOM
-	    console.log(user);
+    // https://api.jquery.com/jQuery.get/
+    // 3. See if the entered username exists in the list of users from jsonplaceholder.typicode.com
+    $.get('http://jsonplaceholder.typicode.com/users', function(users) {
+
+        // users is the list of users returned from jsonplaceholder.typicode.com/users
+        // the "users" variable is an array of objects
+        // Gets the number of users returned from the website.
+        var numUsers = users.length;
+        // loops through the "users" array
+        for (var i = 0; i < numUsers; i++) {
+            // 
+            if (user === users[i].username) {
+                exists = true;
+                break;
+            }
+        }
 	  });
 
-    // 3. See if the entered username exists in the list of users from jsonplaceholder.typicode.com
-    var exists = false;
+    
+    
     // maybe some kind of loop, break if the user is found, set "exists" to true?
-
+    // $.get('http://jsonplaceholder.typicode.com/users', function(users){
+    //   $('').html(users.filter(function(user){
+    //       return ''
+      
+    //   }))  
     // 4. If not, show an error message on promise.html
     if (exists === false) {
         // do stuff

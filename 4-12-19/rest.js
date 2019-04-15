@@ -97,13 +97,14 @@ $('#display').click(function(){$.get('http://jsonplaceholder.typicode.com/posts'
         return '<li>' +post.body + '</li>'
     
     }))  
-$('#posts').click(function(){$.get('http://jsonplaceholder.typicode.com/comments?postId=1', function(comments){
+$('#posts').click(function(){$.get('http://jsonplaceholder.typicode.com/comments?postId=1' , function(comments){
 $('#posts').html(comments.map(function(post){
     return '<li>' +post.body + '</li>'}))
 
 $('#posts').click(function(){
-    $('#posts').html('http://jsonplaceholder.typicode.com/posts');
-})  
+    
+    return document.write("<li>Link: " + ("http:/jsonplaceholder.typicode.com/posts").link("http:/jsonplaceholder.typicode.com/posts") + "</li>")   
+})  // the txt.link (the txt has to be the text that you want displayed)
 })    
 })
 })
