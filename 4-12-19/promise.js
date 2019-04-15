@@ -27,10 +27,36 @@ p.then(function(data){
 //On Submit, look up the username entered by the user.
 //If no user is found, display a detailed error message.
 
-$('#submit').click(function(){$.get('http://jsonplaceholder.typicode.com/', function(user){
+$('#submit').click(function(){$.get('http://jsonplaceholder.typicode.com/users', function(user){
     //Iterate over the response, adding elements to DOM
 	console.log(user);
 	});//the button will get username
+});
+
+$('#submit').click(function() {
+
+    // 1. Get the value from the form the user entered as the username
+    var user = ''; // value from the form
+
+    // 2. Get the list of users from jsonplaceholder.typicode.com/users
+    $.get('http://jsonplaceholder.typicode.com/users', function(user) {
+      //Iterate over the response, adding elements to DOM
+	    console.log(user);
+	  });
+
+    // 3. See if the entered username exists in the list of users from jsonplaceholder.typicode.com
+    var exists = false;
+    // maybe some kind of loop, break if the user is found, set "exists" to true?
+
+    // 4. If not, show an error message on promise.html
+    if (exists === false) {
+        // do stuff
+    }
+
+    // 5. If so, redirect the user to a second webpage showing them their user information
+    if (exists === true) {
+        // redirect to second page
+    }
 });
 
 
