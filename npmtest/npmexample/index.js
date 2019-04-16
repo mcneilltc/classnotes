@@ -3,7 +3,7 @@
 //var req = require('request-promise');
 //var Moment = require('moment');
 
-var req = require ('./DataAcess')
+var req = require ('./DataAcess')// ./ is needed to locate the file
 var req2 = require('./TimeStamp')
 
 //var a = new Moment();
