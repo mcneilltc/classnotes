@@ -25,10 +25,15 @@ var req2 = require('./TimeStamp')
     
 // }, 3000);
 
-// req.getPost();
-// req2.getTime();
+
+
+//modules
+//added data access and timestamp modules in separate js files. And then each module had to have the variable needed to run the module.
+
+// req.getPost();// was called to run the function  getPost() in the module data access
+// req2.getTime();// was called to run the function getTime() module time stamp
 
 setInterval(() => {
     req.getPost();
 req2.getTime();
-}, 3000);
+}, 3000);// a new setinterval was created to take in the two required variables with their functions so that you display the information at 3 second intervals
