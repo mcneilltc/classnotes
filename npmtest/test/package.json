@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "test",
+    "npm",
+    "js"
+  ],
+  "author": "Tiquila McNeill",
+  "license": "ISC"
+}
