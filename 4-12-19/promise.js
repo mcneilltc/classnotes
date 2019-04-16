@@ -33,19 +33,13 @@ p.then(function(data){
 	//});//the button will get username
 //});
 
-$('#submit').click(function() {
-
-    // 1. Get the value from the form the user entered as the username
-    // Note: all usernames retreived from the site are in lowercase letters
-    var user = document.getElementById('inlineFormInputGroupUsername2').value;
-    var exists = false;
-
-    let userName = document.querySelector('input#inlineFormInputGroupUsername2')
+let userName = document.querySelector('input#inlineFormInputGroupUsername2')
  let submit = document.querySelector('button [type="submit"]')
  submit.addEventListener("click", event => {
     //executor
- })
-function findUser(userName) {
+ });
+
+ function findUser(userName) {
    return new Promise(function(resolve, reject){
       $.get('http://jsonplaceholder.typicode.com/users?username=' + userName, function(user){
          if(user.length) resolve(user[0])
@@ -61,6 +55,26 @@ $.get('http://jsonplaceholder.typicode.com/post?userid=' + user.Id, function(pos
 })
    })
 }
+
+
+
+
+
+
+
+
+
+$('#submit').click(function() {
+
+    // 1. Get the value from the form the user entered as the username
+    // Note: all usernames retreived from the site are in lowercase letters
+    var user = document.getElementById('inlineFormInputGroupUsername2').value;
+    var exists = false;
+
+    
+
+
+
 
     // 2. Get the list of users from jsonplaceholder.typicode.com/users
     // https://api.jquery.com/jQuery.get/
