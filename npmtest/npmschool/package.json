@@ -1,11 +1,23 @@
 {
-  "name": "npmschool",
+  "name": "@tiquila/npmschool",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "author": "Tiquila McNeill",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@linclark/pkg": "^1.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "testing npm"
+  },
+  "keywords": [
+    "npm",
+    "school"
+  ],
+  "description": ""
 }
