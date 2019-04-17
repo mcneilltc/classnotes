@@ -1,23 +1,21 @@
 {
   "name": "@tiquila/npmschool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
   "author": "Tiquila McNeill",
   "license": "ISC",
-  "dependencies": {
-    "@linclark/pkg": "^1.0.2"
-  },
+  "description": "Look here for some information",
+  "dependencies": {},
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "testing npm"
+    "url": "testing.com"
   },
   "keywords": [
-    "npm",
-    "school"
-  ],
-  "description": ""
+    "test",
+    "npm"
+  ]
 }
