@@ -13,4 +13,11 @@ var- hoisted to the top of the function and let and const are not
 let
 
 const--creates a constant, its a read only, can't be reassigned or redeclared
+const also can accept uppercase lowercase
 
+default parameters
+
+**Arrow Functions**
+
+
+**rest**
