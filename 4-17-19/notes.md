@@ -21,3 +21,6 @@ default parameters
 
 
 **rest**
+
+**spread**
+spread takes the value of the items and puts them in to another item but in order

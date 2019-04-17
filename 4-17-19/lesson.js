@@ -126,5 +126,32 @@ console.log(add(1,2,3,4,5,6,7,8));
 
 //rest parameter
 
-let add =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
-console.log(add(1,2,3,4,5,6,7,8));
+let add2 =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
+console.log(add2(1,2,3,4,5,6,7,8));
+
+
+function addStuff(x, y, ...z){
+    //make sure he rest element is at the end of the arugment
+    return (x+y) * z.length
+}
+console.log(addStuff(1,2, "hello", "world", true, 99));// returns 12 because the length of array z is 4, the last 4 items in the parameters are taken in as an array of z.
+
+//spread operator
+let random = ["hellow", "world", true, 99]
+let newArray = [1,2, ...random, 3]
+console.log(newArray);
+
+let spreadEX =(item) => {
+    let spreadArray = [...item]
+    console.log(spreadArray);
+    return spreadArray
+}
+spreadEX("Hello World");
+//[ 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd' ], breaks apart each piece of the arugment and returns it into  an array
+
+let restEX = (...z) => {
+    console.log(z)
+    return z
+} 
+restEX("hello", "world")
+//[ 'hello', 'world' ] is returned as an array
