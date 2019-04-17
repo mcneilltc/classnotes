@@ -101,11 +101,30 @@
 // console.log(names);
 
 
-function add(){
-    console.log("arguments object:", arguments);
-    var numbers = Array.prototype.slice.call(arguments),
-    var sum = 0;
-    numbers.forEach(function(number){sum += number;});
+// function add(){
+//     console.log("arguments object:", arguments);
+
+//     var numbers = Array.prototype.slice.call(arguments);
+//     var sum = 0;
+
+//     numbers.forEach(function (number){sum += number;
+//     });
+//     return sum;
+// }
+// console.log(add(1,2,3,4,5,6,7,8));
+
+//ES6
+let add = (...numbers) => {// ... is the rest operator for the parameter
+    console.log("rest parameters", numbers)
+    let sum= 0;
+    numbers.forEach(function(number){
+        sum += number;
+    })
     return sum;
 }
+console.log(add(1,2,3,4,5,6,7,8));
+
+//rest parameter
+
+let add =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
 console.log(add(1,2,3,4,5,6,7,8));
