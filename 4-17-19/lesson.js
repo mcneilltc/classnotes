@@ -1,4 +1,4 @@
-//Template literals
+// //Template literals
 // console.log(`Hello! I'm a string
 // continues on this line`);// pressed enter and the line continued
 
@@ -85,7 +85,7 @@
 
 // }};
 // teacher.speak();
-// //lexical Binding-they bind to scope where defined not where they are used
+//  //lexical Binding-they bind to scope where defined not where they are used
 
 // let students =[
 //     {name: 'Hugo'},
@@ -113,45 +113,134 @@
 // }
 // console.log(add(1,2,3,4,5,6,7,8));
 
-//ES6
-let add = (...numbers) => {// ... is the rest operator for the parameter
-    console.log("rest parameters", numbers)
-    let sum= 0;
-    numbers.forEach(function(number){
-        sum += number;
-    })
-    return sum;
+// //ES6
+// let add = (...numbers) => {// ... is the rest operator for the parameter
+//     console.log("rest parameters", numbers)
+//     let sum= 0;
+//     numbers.forEach(function(number){
+//         sum += number;
+//     })
+//     return sum;
+// }
+// console.log(add(1,2,3,4,5,6,7,8));
+
+// //rest parameter
+
+// let add2 =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
+// console.log(add2(1,2,3,4,5,6,7,8));
+
+
+// function addStuff(x, y, ...z){
+//     //make sure he rest element is at the end of the arugment
+//     return (x+y) * z.length
+// }
+// console.log(addStuff(1,2, "hello", "world", true, 99));// returns 12 because the length of array z is 4, the last 4 items in the parameters are taken in as an array of z.
+
+// //spread operator
+// let random = ["hellow", "world", true, 99]
+// let newArray = [1,2, ...random, 3]
+// console.log(newArray);
+
+// let spreadEX =(item) => {
+//     let spreadArray = [...item]
+//     console.log(spreadArray);
+//     return spreadArray
+// }
+// spreadEX("Hello World");
+// //[ 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd' ], breaks apart each piece of the arugment and returns it into  an array
+
+// let restEX = (...z) => {
+//     console.log(z)
+//     return z
+// } 
+// restEX("hello", "world")
+// [ 'hello', 'world' ] is returned as an array
+
+// var students = ["julian", "aj", "matt"];
+// var x = students[0];
+// var y = students[1];
+// var z = students[2];
+
+// console.log (x, y, z);
+
+// es6 destructuring
+// let students = ["julian", "aj", "matt"];
+// let[x,y,z] = students// get all three names in the array
+// let[x, ,z] = students// will omit aj
+
+// let[x, ...rest] = students;
+// console.log(x, rest);// will get julian ["aj", "matt"]
+
+// let completedHomework = ()=> {
+//     return["Julian", "AJ", "Matt"];
+// }
+// let [x,y,z]= completedHomework();
+// console.log(x,y,z);
+// // if it is a string then it will return each part of the string and if it is an array we want to return each part of the array
+
+
+// //also works with objects
+// let instructor = {
+//     name: "jimmy",
+//     email: "no@no.com"
+// }
+// let { name: x, email: y}= instructor;
+
+// console.log(x);
+
+// make object
+// make function with default param
+// return both
+
+let family = {
+    mom: "Kat",
+    dad: "Doug",
+    kid1: "Wren",
+    kid2: "Chuck"
 }
-console.log(add(1,2,3,4,5,6,7,8));
-
-//rest parameter
-
-let add2 =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
-console.log(add2(1,2,3,4,5,6,7,8));
-
-
-function addStuff(x, y, ...z){
-    //make sure he rest element is at the end of the arugment
-    return (x+y) * z.length
+function fam(){
+    console.log(family.mom, family.dad, family.kid1, family.kid2)
 }
-console.log(addStuff(1,2, "hello", "world", true, 99));// returns 12 because the length of array z is 4, the last 4 items in the parameters are taken in as an array of z.
+//let { mom: a, dad: b, kid1: c, kid2:d} = family;//?
+fam(family);// returns kat doug wren and chuck
 
-//spread operator
-let random = ["hellow", "world", true, 99]
-let newArray = [1,2, ...random, 3]
-console.log(newArray);
-
-let spreadEX =(item) => {
-    let spreadArray = [...item]
-    console.log(spreadArray);
-    return spreadArray
+let car ={
+    make: "Honda"
 }
-spreadEX("Hello World");
-//[ 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd' ], breaks apart each piece of the arugment and returns it into  an array
+function something({make, year = 2001}){
+    console.log(make, year);
+}
+something(car);///returns Honda 2001
 
-let restEX = (...z) => {
-    console.log(z)
-    return z
-} 
-restEX("hello", "world")
-//[ 'hello', 'world' ] is returned as an array
+
+//constructor
+function Person(name, job){// create the template for the object that you want to use more than once. This means you won't have to repeat the same code
+    this.name =name;
+    this.job =job;
+}
+Person.prototype.getName = function getName(){
+    return this.name;
+}
+Person.prototype.getJob = function getJob(){
+    return this.job;
+}
+var goodGuy = new Person ("Aang", "Airbender");
+console.log(goodGuy.getName, goodGuy.getJob)// [Function: getName] [Function: getJob]
+console.log(goodGuy.getName(), goodGuy.getJob())// Aang Airbender
+
+//constructor updates
+
+class Person{
+    constructor(name, job){
+        this.name =name;
+        this.job=job;
+    }
+    getName(){
+        return this.name;
+    }
+    getJob(){
+        return this.job;
+    }
+}
+let goodGuy = new Person('Neo', 'the one')
+console.log(goodGuy);

@@ -24,3 +24,9 @@ default parameters
 
 **spread**
 spread takes the value of the items and puts them in to another item but in order
+
+**classes in js**
+
+constructors are capitalized see line 216
+
+the new keyword will create the object for you, therefore you
