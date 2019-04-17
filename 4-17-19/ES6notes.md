@@ -30,3 +30,6 @@ spread takes the value of the items and puts them in to another item but in orde
 constructors are capitalized see line 216
 
 the new keyword will create the object for you, therefore you
+
+**Big O notation**
+Chris's fibonacci example

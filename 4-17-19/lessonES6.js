@@ -192,55 +192,131 @@
 // make function with default param
 // return both
 
-let family = {
-    mom: "Kat",
-    dad: "Doug",
-    kid1: "Wren",
-    kid2: "Chuck"
-}
-function fam(){
-    console.log(family.mom, family.dad, family.kid1, family.kid2)
-}
-//let { mom: a, dad: b, kid1: c, kid2:d} = family;//?
-fam(family);// returns kat doug wren and chuck
+// let family = {
+//     mom: "Kat",
+//     dad: "Doug",
+//     kid1: "Wren",
+//     kid2: "Chuck"
+// }
+// function fam(){
+//     console.log(family.mom, family.dad, family.kid1, family.kid2)
+// }
+// //let { mom: a, dad: b, kid1: c, kid2:d} = family;//?
+// fam(family);// returns kat doug wren and chuck
 
-let car ={
-    make: "Honda"
-}
-function something({make, year = 2001}){
-    console.log(make, year);
-}
-something(car);///returns Honda 2001
+// let car ={
+//     make: "Honda"
+// }
+// function something({make, year = 2001}){
+//     console.log(make, year);
+// }
+// something(car);///returns Honda 2001
 
 
-//constructor
-function Person(name, job){// create the template for the object that you want to use more than once. This means you won't have to repeat the same code
-    this.name =name;
-    this.job =job;
-}
-Person.prototype.getName = function getName(){
-    return this.name;
-}
-Person.prototype.getJob = function getJob(){
-    return this.job;
-}
-var goodGuy = new Person ("Aang", "Airbender");
-console.log(goodGuy.getName, goodGuy.getJob)// [Function: getName] [Function: getJob]
-console.log(goodGuy.getName(), goodGuy.getJob())// Aang Airbender
+// //constructor
+// function Person(name, job){// create the template for the object that you want to use more than once. This means you won't have to repeat the same code
+//     this.name =name;
+//     this.job =job;
+// }
+// Person.prototype.getName = function getName(){
+//     return this.name;
+// }
+// Person.prototype.getJob = function getJob(){
+//     return this.job;
+// }
+// var goodGuy = new Person ("Aang", "Airbender");
+// console.log(goodGuy.getName, goodGuy.getJob)// [Function: getName] [Function: getJob]
+// console.log(goodGuy.getName(), goodGuy.getJob())// Aang Airbender
 
 //constructor updates
 
-class Person{
-    constructor(name, job){
-        this.name =name;
-        this.job=job;
-    }
-    getName(){
-        return this.name;
-    }
-    getJob(){
-        return this.job;
-    }
-}
-let goodGuy = new Person('Neo', 'the one')
-console.log(goodGuy);
+// class Person{
+//     constructor(name, job){
+//         this.name =name;
+//         this.job=job;
+//     }
+//     getName(){
+//         return this.name;
+//     }
+//     getJob(){
+//         return this.job;
+//     }
+// }
+
+// let goodGuy = new Person('Neo', 'the one')
+// console.log(goodGuy);
+
+// class SuperHeros extends Person{
+//     constructor(name, heroName, superPower){
+//         super(name);// super keyword lets you use the existing name property in the object
+//         this.heroName = heroName;
+//         this.superPower = superPower;
+//     }
+//     secretidentity(){
+//         return `${this.heroName} is ${this.name}!!`
+//     }
+// }
+// let batman = new SuperHeros("Bruce Wayne", "Im Batman")
+// console.log(batman.secretidentity())// returns Im Batman is Bruce Wayne
+
+// class Person{
+//     constructor(name){
+//         this.name = name;
+//     }
+//     set name(name){
+//         this._name =name;
+//     }
+//     get name(){//lets us read teh object property
+//         return this._name
+//     }
+// }
+// let goodGuy = new Person('Jim Gordon');
+// console.log(goodGuy.name);// Jim Gordon
+// goodGuy.name = "James Gordon";
+// console.log(goodGuy.name);// James Gordon
+
+let student = {name: "A-aron"};
+let status = new Map();// lets us store key value pairs. since objects can convert to both keys and values and can convert them both to strings. Map is an object
+status.set(student.name, "D-nice");
+status.set("feeling", "churlish");
+console.log(status.get(student.name));
+console.log(status.get("feeling"))
+
+//encapsulating-- you can't access a variable outside the scope unless you have a set or get
+const Guy = (function(){
+    const  _name = Symbol();
+    class Guy {
+        constructor(name){
+            this[_name]= name;
+        }
+            set name(name){
+                this[_name]=name;
+            }
+            get name(){
+                return this [_name];
+            }
+            
+        }
+return Guy;
+    }());
+    let guy = new Guy("Fieri");
+    console.log(guy.name);
+
+    const Guy = (function(){
+        const  _name = new WeakMap();//WeakMap
+        class Guy {
+            constructor(name){
+                this[_name]= name;
+            }
+                set name(name){
+                    this[_name]=name;
+                }
+                get name(){
+                    return this [_name];
+                }
+                
+            }
+    return Guy;
+        }());
+        let guy = new Guy("Fieri");
+        console.log(guy.name);
