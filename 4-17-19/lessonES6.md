@@ -1,4 +1,5 @@
-//Template literals
+**Template literals**
+````javascript
 console.log(`Hello! I'm a string
 continues on this line`);// pressed enter and the line continued
 
@@ -13,36 +14,42 @@ const instructor = {//ES6
 }
 
 console.log("Hello" + name + "I hope you have a great day on" +day);
+````
 
-//es6 way
+**es6 way**
 
+````javascript
 console.log(`Hello ${name} I hope ${day} goes well`)
 console.log(`${instructor.name} will be teaching ${instructor.lesson} today`)
 
 console.log(instructor.greet());
+````
 
-//var let const
+**var let const**
 
-// function foo(){
-// let x =true;
-// if(x){
-//     var usingVar = "I'm using var";//hoisting happens with the var- its usually at the top of the function and can be used through the whole thing
-// }
-// console.log(usingVar)
-// }
-// foo();
+````javascript
+ function foo(){
+ let x =true;
+ if(x){
+     var usingVar = "I'm using var";//hoisting happens with the var- its usually at the top of the function and can be used through the whole thing
+ }
+ console.log(usingVar)
+ }
+ foo();
 
-// function foo(){
-//     let x =true;
-//     if(x){
-//         let usingVar = "I'm using let";//using let gives you more control of your variables
-//     }
-//     console.log(usingVar)
-//     }
-//     foo();// will log undefined
-
- //typeError
+ function foo(){
+     let x =true;
+     if(x){
+         let usingVar = "I'm using let";//using let gives you more control of your variables
+     }
+     console.log(usingVar)
+     }
+     foo();// will log undefined
+````
  
+ **typeError**
+ 
+ ````javascript
  const instructors =["Jimm", "Christ"]
  //instructors=["Jim", "Chris"]//won't work because the const has all ready been assigned
  instructors.push("Jack", "Jill")// this method adds new instructors to the array
@@ -59,10 +66,11 @@ hello();
 function hello(name = "Mystery Person"){
     console.log(`Hello ${name} is it me you're looking for`)
 }
+````
 
+**Arrow functions!**
 
-//arrow functions!
-
+````javascript
 const teacher ={
     name: "Jimm",
     speak: function(){
@@ -85,8 +93,11 @@ setTimeout(boundFunction, 1000);
 
 }};
 teacher.speak();
- //lexical Binding-they bind to scope where defined not where they are used
+````
 
+ **lexical Binding**-they bind to scope where defined not where they are used
+
+````javascript
 let students =[
     {name: 'Hugo'},
     {name: 'Candace'},
@@ -112,8 +123,11 @@ function add(){
     return sum;
 }
 console.log(add(1,2,3,4,5,6,7,8));
+````
 
-//ES6
+**The ES6 way**
+
+````javascript
 let add = (...numbers) => {// ... is the rest operator for the parameter
     console.log("rest parameters", numbers)
     let sum= 0;
@@ -123,9 +137,11 @@ let add = (...numbers) => {// ... is the rest operator for the parameter
     return sum;
 }
 console.log(add(1,2,3,4,5,6,7,8));
+````
 
-//rest parameter
+**rest parameter**
 
+````javascript
 let add2 =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
 console.log(add2(1,2,3,4,5,6,7,8));
 
@@ -135,8 +151,11 @@ function addStuff(x, y, ...z){
     return (x+y) * z.length
 }
 console.log(addStuff(1,2, "hello", "world", true, 99));// returns 12 because the length of array z is 4, the last 4 items in the parameters are taken in as an array of z.
+````
 
-//spread operator
+**spread operator**
+
+````javascript
 let random = ["hellow", "world", true, 99]
 let newArray = [1,2, ...random, 3]
 console.log(newArray);
@@ -162,8 +181,11 @@ var y = students[1];
 var z = students[2];
 
 console.log (x, y, z);
+````
 
-es6 destructuring
+**es6 destructuring**
+
+````javascript
 let students = ["julian", "aj", "matt"];
 let[x,y,z] = students// get all three names in the array
 let[x, ,z] = students// will omit aj
@@ -211,9 +233,10 @@ function something({make, year = 2001}){
     console.log(make, year);
 }
 something(car);///returns Honda 2001
+````
 
-
-//constructor
+**constructors**
+````javascript
 function Person(name, job){// create the template for the object that you want to use more than once. This means you won't have to repeat the same code
     this.name =name;
     this.job =job;
@@ -228,8 +251,9 @@ var goodGuy = new Person ("Aang", "Airbender");
 console.log(goodGuy.getName, goodGuy.getJob)// [Function: getName] [Function: getJob]
 console.log(goodGuy.getName(), goodGuy.getJob())// Aang Airbender
 
-constructor updates
-
+````
+**Constructor updates**
+````javascript
 class Person{
     constructor(name, job){
         this.name =name;
@@ -281,8 +305,10 @@ status.set(student.name, "D-nice");
 status.set("feeling", "churlish");
 console.log(status.get(student.name));
 console.log(status.get("feeling"))
+````
 
-//encapsulating-- you can't access a variable outside the scope unless you have a set or get
+***Encapsulating***-- you can't access a variable outside the scope unless you have a set or get
+````javascript
 const Guy = (function(){
     const  _name = Symbol();
     class Guy {
@@ -320,3 +346,4 @@ return Guy;
         }());
         let guy = new Guy("Fieri");
         console.log(guy.name);
+````        
