@@ -27,6 +27,13 @@ console.log(instructor.greet());
 
 **var let const**
 
+var- hoisted to the top of the function and let and const are not
+
+let- I'm not too sure
+
+const--creates a constant, its a read only, can't be reassigned or redeclared
+const also can accept uppercase lowercase
+
 ````javascript
  function foo(){
  let x =true;
@@ -143,22 +150,27 @@ console.log(add(1,2,3,4,5,6,7,8));
 
 ````javascript
 let add2 =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
-console.log(add2(1,2,3,4,5,6,7,8));
+console.log(add2(1,2,3,4,5,6,7,8))// returns 36;
+````
+the rest element includes [`...`] as what is to be include. The `...` means the rest.
 
-
+````javascript
 function addStuff(x, y, ...z){
     //make sure he rest element is at the end of the arugment
     return (x+y) * z.length
 }
 console.log(addStuff(1,2, "hello", "world", true, 99));// returns 12 because the length of array z is 4, the last 4 items in the parameters are taken in as an array of z.
 ````
+the rest operator doesn't have to be at the end of the argument if its data will be separated by a comma. Where you place it in the an array, is the position that it will be placed when it gets returned.
 
 **spread operator**
+
+Spread takes the value of the items and puts them in to another item but in order
 
 ````javascript
 let random = ["hellow", "world", true, 99]
 let newArray = [1,2, ...random, 3]
-console.log(newArray);
+console.log(newArray);// [1,1, ["hellow", "world", true, 99], 3]
 
 let spreadEX =(item) => {
     let spreadArray = [...item]
@@ -167,6 +179,10 @@ let spreadEX =(item) => {
 }
 spreadEX("Hello World");
 //[ 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd' ], breaks apart each piece of the arugment and returns it into  an array
+````
+With the spread operator for the string, the words will be broken a part. On an array, the parts of the array will be separated out.
+
+````javascript
 
 let restEX = (...z) => {
     console.log(z)
@@ -198,10 +214,12 @@ let completedHomework = ()=> {
 }
 let [x,y,z]= completedHomework();
 console.log(x,y,z);
-// if it is a string then it will return each part of the string and if it is an array we want to return each part of the array
+````
+If it is a string then it will return each part of the string and if it is an array we want to return each part of the array
 
 
-//also works with objects
+It also works with objects:
+```javascript
 let instructor = {
     name: "jimmy",
     email: "no@no.com"
@@ -232,10 +250,16 @@ let car ={
 function something({make, year = 2001}){
     console.log(make, year);
 }
-something(car);///returns Honda 2001
-````
+something(car);//returns Honda 2001
+```
 
-**constructors**
+
+**Constructors**
+
+constructors are capitalized 
+
+the new keyword will create the object for you, therefore you will not have to add a new person everytime. The template will create it for you.
+
 ````javascript
 function Person(name, job){// create the template for the object that you want to use more than once. This means you won't have to repeat the same code
     this.name =name;
@@ -253,6 +277,8 @@ console.log(goodGuy.getName(), goodGuy.getJob())// Aang Airbender
 
 ````
 **Constructor updates**
+
+
 ````javascript
 class Person{
     constructor(name, job){
@@ -269,6 +295,10 @@ class Person{
 
 let goodGuy = new Person('Neo', 'the one')
 console.log(goodGuy);
+````
+This will return:   `Neo the one`
+
+```javascript
 
 class SuperHeros extends Person{
     constructor(name, heroName, superPower){
@@ -282,7 +312,11 @@ class SuperHeros extends Person{
 }
 let batman = new SuperHeros("Bruce Wayne", "Im Batman")
 console.log(batman.secretidentity())// returns Im Batman is Bruce Wayne
+```
 
+Using the get and set within the constructor.
+
+```javascript
 class Person{
     constructor(name){
         this.name = name;
@@ -290,7 +324,7 @@ class Person{
     set name(name){
         this._name =name;
     }
-    get name(){//lets us read teh object property
+    get name(){//lets us read the object property
         return this._name
     }
 }
@@ -298,7 +332,10 @@ let goodGuy = new Person('Jim Gordon');
 console.log(goodGuy.name);// Jim Gordon
 goodGuy.name = "James Gordon";
 console.log(goodGuy.name);// James Gordon
+```
+ 
 
+````javascript
 let student = {name: "A-aron"};
 let status = new Map();// lets us store key value pairs. since objects can convert to both keys and values and can convert them both to strings. Map is an object
 status.set(student.name, "D-nice");
@@ -307,7 +344,11 @@ console.log(status.get(student.name));
 console.log(status.get("feeling"))
 ````
 
-***Encapsulating***-- you can't access a variable outside the scope unless you have a set or get
+In order to get the status to change for the student you have to have `student.name` as part of the argument. Without the .name the function will return undefined. 
+
+
+**Encapsulating**  you can't access a variable outside the scope unless you have a set or get
+
 ````javascript
 const Guy = (function(){
     const  _name = Symbol();
@@ -327,7 +368,11 @@ return Guy;
     }());
     let guy = new Guy("Fieri");
     console.log(guy.name);
+````
 
+This example changes the const of a function to a new WeakMap- not too sure what it does because they both return  `Fieri`.
+
+````javascript
     const Guy = (function(){
         const  _name = new WeakMap();//WeakMap
         class Guy {
@@ -346,4 +391,8 @@ return Guy;
         }());
         let guy = new Guy("Fieri");
         console.log(guy.name);
-````        
+````
+
+**Big O notation**
+
+See Chris's fibonacci example
