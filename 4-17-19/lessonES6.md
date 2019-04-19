@@ -1,4 +1,4 @@
-**Template literals**
+##**Template literals**
 ````javascript
 console.log(`Hello! I'm a string
 continues on this line`);// pressed enter and the line continued
@@ -25,7 +25,7 @@ console.log(`${instructor.name} will be teaching ${instructor.lesson} today`)
 console.log(instructor.greet());
 ````
 
-**var let const**
+##**var let const**
 
 var- hoisted to the top of the function and let and const are not
 
@@ -54,7 +54,7 @@ const also can accept uppercase lowercase
      foo();// will log undefined
 ````
  
- **typeError**
+ ##**typeError**
  
  ````javascript
  const instructors =["Jimm", "Christ"]
@@ -75,7 +75,7 @@ function hello(name = "Mystery Person"){
 }
 ````
 
-**Arrow functions!**
+##**Arrow functions!**
 
 ````javascript
 const teacher ={
@@ -146,7 +146,7 @@ let add = (...numbers) => {// ... is the rest operator for the parameter
 console.log(add(1,2,3,4,5,6,7,8));
 ````
 
-**rest parameter**
+##**rest parameter**
 
 ````javascript
 let add2 =(...numbers) =>numbers.reduce((sum, number)=> sum += number, 0);// reduce takes in all the numbers and returns it as an array. 0 is where you want the function to start in the array
@@ -163,7 +163,7 @@ console.log(addStuff(1,2, "hello", "world", true, 99));// returns 12 because the
 ````
 the rest operator doesn't have to be at the end of the argument if its data will be separated by a comma. Where you place it in the an array, is the position that it will be placed when it gets returned.
 
-**spread operator**
+##**spread operator**
 
 Spread takes the value of the items and puts them in to another item but in order
 
@@ -199,7 +199,7 @@ var z = students[2];
 console.log (x, y, z);
 ````
 
-**es6 destructuring**
+##**es6 destructuring**
 
 ````javascript
 let students = ["julian", "aj", "matt"];
@@ -254,7 +254,7 @@ something(car);//returns Honda 2001
 ```
 
 
-**Constructors**
+##**Constructors**
 
 constructors are capitalized 
 
@@ -276,7 +276,7 @@ console.log(goodGuy.getName, goodGuy.getJob)// [Function: getName] [Function: ge
 console.log(goodGuy.getName(), goodGuy.getJob())// Aang Airbender
 
 ````
-**Constructor updates**
+###**Constructor updates**
 
 
 ````javascript
