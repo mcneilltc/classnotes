@@ -9,11 +9,10 @@ var express = require('express');
     require('babel/register')({
         ignore: false
     });
+var data = [];
 
     app.use('/', function(req, res) {
-      res.render('index', '');
+      res.render('index', {data, data});
     });
 
-    app.listen(app.get('port'), function() {
-        console.log('Express server is up on port 3000');
-    });
+    app.listen(app.get('port'), function() {});

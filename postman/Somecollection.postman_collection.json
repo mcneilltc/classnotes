@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "d5e01521-21a1-40cc-ba21-a328877da364",
+		"name": "Some collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://jsonplaceholder.typicode.com/users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "05c79a1b-15f1-4ce0-b6e4-f3661fb5289a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(1);",
+							"});",
+							"pm.test(\"Check if user with id1 is Leanne Graham\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.[0].name).to.eql(\"Leanne Graham\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 12,\n        \"name\": \"Ronald Rungta\",\n        \"username\": \"RonRun\",\n        \"email\": \"Sincere@april.biz\",\n        \"address\": {\n            \"street\": \"Kulas Light\",\n            \"suite\": \"Apt. 556\",\n            \"city\": \"Gwennett\",\n            \"zipcode\": \"92998-3874\",\n            \"geo\": {\n                \"lat\": \"-37.3159\",\n                \"lng\": \"81.1496\"\n            }\n        },\n        \"phone\": \"1-770-736-8031 x56442\",\n        \"website\": \"hildegard.org\",\n        \"company\": {\n            \"name\": \"Romaguera-Crona\",\n            \"catchPhrase\": \"Multi-layered client-server neural-net\",\n            \"bs\": \"harness real-time e-markets\"\n        }\n    }\n]"
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
