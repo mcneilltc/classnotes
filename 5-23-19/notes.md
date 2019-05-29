@@ -101,6 +101,5 @@ Last in, First out
  myStack.peek();//look at the top of the stack without removing anything
  myStack.empty();// to know if the stack is empty before we use it
 
-
-
  ```
+ 
